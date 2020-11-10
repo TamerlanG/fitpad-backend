@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 
     # Local
-    'users.apps.UsersConfig'
+    'common.apps.CommonConfig',
+    'users.apps.UsersConfig',
+    'log.apps.LogConfig',
 ]
 
 MIDDLEWARE = [
