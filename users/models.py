@@ -5,6 +5,11 @@ from django.utils.translation import ugettext_lazy as _
 from .managers import CustomUserManager
 
 
+class Gender(models.IntegerChoices):
+    MALE = 0
+    FEMALE = 1
+
+
 class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_('email address'), unique=True)
@@ -14,7 +19,9 @@ class CustomUser(AbstractUser):
 
     objects = CustomUserManager()
 
-    spouse_name = models.CharField(blank=True, max_length=100)
+    gender = models.IntegerField(choices=Gender.choices, default=0)
+    weight = models.IntegerField(blank=True, null=True)
+    height = models.IntegerField(blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
 
     def __str__(self):
