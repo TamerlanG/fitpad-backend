@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'users.apps.UsersConfig',
     'log.apps.LogConfig',
+    'workout.apps.WorkoutConfig',
 ]
 
 MIDDLEWARE = [
